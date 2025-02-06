@@ -3,8 +3,8 @@ pipeline {
 
     stages {
         stage('Build') {
-            agent{
-                docker{
+            agent {
+                docker {
                     image 'node:18-alpine'
                     reuseNode true
                 }
@@ -14,9 +14,8 @@ pipeline {
                     ls -la
                     node --version
                     npm --version 
-                    npm ci
+                    npm ci || cat /home/node/.npm/_logs/*-debug-*.log
                     npm run build
-                    ls -la
                 '''
             }
         }
