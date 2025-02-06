@@ -2,6 +2,11 @@ pipeline {
     agent any
 
     stages {
+        stage('Clean Workspace') {
+            steps {
+                sh 'rm -rf node_modules package-lock.json'
+            }
+        }
         stage('Build') {
             agent {
                 docker {
