@@ -19,7 +19,7 @@ pipeline {
                     ls -la
                     node --version
                     npm --version 
-                    npm ci || cat /home/node/.npm/_logs/*-debug-*.log
+                    npm install || cat /home/node/.npm/_logs/*-debug-*.log
                     npm run build
                 '''
             }
