@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Clean Workspace') {
             steps {
-                sh 'rm -rf node_modules package-lock.json'
+                sh 'rm -rf node_modules'
             }
         }
         stage('Build') {
